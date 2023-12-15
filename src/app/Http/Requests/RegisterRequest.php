@@ -16,6 +16,11 @@ class RegisterRequest extends FormRequest
         return true;
     }
 
+    public function validate()
+    {
+        return $this->validated();
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *
