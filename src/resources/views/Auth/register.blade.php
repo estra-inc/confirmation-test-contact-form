@@ -33,4 +33,5 @@
   </p>
   <input type="submit" value="登録">
 </form>
+<a href="/login">Login</a>
 @endsection('content')
