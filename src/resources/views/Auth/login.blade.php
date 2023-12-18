@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('link')
+<a class="header__link" href="/register">Register</a>
+@endsection
+
 @section('content')
 <h2>Login</h2>
 <form action="/login" method="post">
@@ -24,5 +28,4 @@
   </p>
   <input type="submit" value="登録">
 </form>
-<a href="/register">Register</a>
 @endsection('content')
