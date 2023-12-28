@@ -44,6 +44,14 @@ body {
   grid-column: 3;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  padding: 48px;
+}
+
 /* ボタン */
 .btn {
   display: block;

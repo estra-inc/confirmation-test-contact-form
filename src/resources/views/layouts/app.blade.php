@@ -16,7 +16,9 @@
       <h1 class="header__heading">FashionablyLate</h1>
       @yield('link')
     </header>
-    @yield('content')
+    <div class="content">
+      @yield('content')
+    </div>
   </div>
 </body>
 
