@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use App\Models\Category;
 use App\Models\Contact;
-use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
@@ -13,7 +13,7 @@ class ContactController extends Controller
         return view('contact', compact('categories'));
     }
 
-    function confirm(Request $request) {
+    function confirm(ContactRequest $request) {
         $contacts = $request->only([
             'category_id',
             'first_name',
@@ -31,7 +31,7 @@ class ContactController extends Controller
         return view('confirm', compact('contacts', 'category'));
     }
 
-    function store(Request $request) {
+    function store(ContactRequest $request) {
         $request['tell'] = $request->tel_1 . $request->tel_2 . $request->tel_3;
         Contact::create($request->only([
                 'category_id',
