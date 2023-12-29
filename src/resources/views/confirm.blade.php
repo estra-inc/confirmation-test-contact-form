@@ -44,7 +44,7 @@
     </tr>
     <tr>
       <th>お問い合わせの種類</th>
-      <td>{{ $contacts['category_id'] }}</td>
+      <td>{{ $category->content }}</td>
       <input type="hidden" name="category_id" value="{{ $contacts['category_id'] }}">
     </tr>
     <tr>

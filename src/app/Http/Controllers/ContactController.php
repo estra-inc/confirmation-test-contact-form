@@ -27,7 +27,8 @@ class ContactController extends Controller
             'building',
             'detail',
         ]);
-        return view('confirm', compact('contacts'));
+        $category = Category::find($request->category_id);
+        return view('confirm', compact('contacts', 'category'));
     }
 
     function store(Request $request) {
