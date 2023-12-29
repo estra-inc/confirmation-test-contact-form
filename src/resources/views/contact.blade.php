@@ -1,4 +1,4 @@
-<form action="confirm" method="POST">
+<form action="confirm" method="post">
   @csrf
   <label for="">お名前</label>
   <input type="text" name="first_name">
@@ -31,10 +31,10 @@
   <input type="text" name="building">
 
   <select name="category_id" id="">
-    <option value="">選択してください</option>
-    @foreach($categories as $category)
+    <option disabled selected>選択してください</option>
+      @foreach($categories as $category)
     <option value="{{ $category->id }}">{{ $category->content }}</option>
-    @endforeach
+      @endforeach
   </select>
 
   <label for="">お問い合わせ内容</label>
