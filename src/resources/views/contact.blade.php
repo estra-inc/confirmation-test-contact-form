@@ -7,13 +7,13 @@
 
   <label for="">性別</label>
   <label for="">男性
-  <input type="radio" name="gender" value="男" checked>
+  <input type="radio" name="gender" value="1" checked>
   </label>
   <label for="">女性
-  <input type="radio" name="gender" value="女">
+  <input type="radio" name="gender" value="2">
   </label>
   <label for="">その他
-  <input type="radio" name="gender" value="その他">
+  <input type="radio" name="gender" value="3">
   </label>
 
   <label for="">メールアドレス</label>
