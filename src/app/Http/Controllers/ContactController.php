@@ -15,6 +15,7 @@ class ContactController extends Controller
 
     function confirm(Request $request) {
         $contacts = $request->only([
+            'category_id',
             'first_name',
             'last_name',
             'gender',
@@ -24,23 +25,25 @@ class ContactController extends Controller
             'tel_3',
             'address',
             'building',
-            'category_id',
             'detail',
         ]);
         return view('confirm', compact('contacts'));
     }
 
     function store(Request $request) {
-        $contacts = $request->only([
-            'first_name',
-            'last_name',
-            'gender',
-            'email',
-            'tel',
-            'address',
-            'building',
-            'detail',
-            'content',
-        ]);
+        $request['tell'] = $request->tel_1 . $request->tel_2 . $request->tel_3;
+        Contact::create($request->only([
+                'category_id',
+                'first_name',
+                'last_name',
+                'gender',
+                'email',
+                'tell',
+                'address',
+                'building',
+                'detail',
+            ])
+        );
+        return view('thanks');
     }
 }

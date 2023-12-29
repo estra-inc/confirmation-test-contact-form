@@ -45,7 +45,7 @@
     <tr>
       <th>お問い合わせの種類</th>
       <td>{{ $contacts['category_id'] }}</td>
-      <input type="hidden" name="building" value="{{ $contacts['building'] }}">
+      <input type="hidden" name="category_id" value="{{ $contacts['category_id'] }}">
     </tr>
     <tr>
       <th>お問い合わせ内容</th>
@@ -53,7 +53,6 @@
       <input type="hidden" name="detail" value="{{ $contacts['detail'] }}">
     </tr>
   </table>
-  <input type="hidden" name="category_id" value="$request->category_id">
   <input type="submit" value="送信">
   <a href="">修正</a>
 </form>
