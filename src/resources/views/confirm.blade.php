@@ -53,6 +53,6 @@
       <input type="hidden" name="detail" value="{{ $contacts['detail'] }}">
     </tr>
   </table>
-  <input type="submit" value="送信">
-  <a href="">修正</a>
+  <input type="submit" value="送信" name="send">
+  <input type="submit" value="修正" name="back">
 </form>
