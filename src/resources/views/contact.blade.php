@@ -32,9 +32,9 @@
 
   <select name="category_id" id="">
     <option value="">選択してください</option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
+    @foreach($categories as $category)
+    <option value="{{ $category->id }}">{{ $category->content }}</option>
+    @endforeach
   </select>
 
   <label for="">お問い合わせ内容</label>
