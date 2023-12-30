@@ -32,12 +32,14 @@
       <input type="submit" value="リセット">
     </form>
   </div>
+  {{ $contacts->links() }}
   <table>
     <tr>
       <th>お名前</th>
       <th>性別</th>
       <th>メールアドレス</th>
       <th>お問い合わせの種類</th>
+      <th></th>
     </tr>
     @foreach($contacts as $contact)
     <tr>
@@ -52,7 +54,10 @@
         @endif
       </td>
       <td>{{$contact->email}}</td>
-      <td>{{$contact->category_id}}</td>
+      <td>{{$contact->category->content}}</td>
+      <td>
+        <a href="">詳細</a>
+      </td>
     </tr>
     @endforeach
   </table>
