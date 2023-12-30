@@ -39,6 +39,22 @@
       <th>メールアドレス</th>
       <th>お問い合わせの種類</th>
     </tr>
+    @foreach($contacts as $contact)
+    <tr>
+      <td>{{$contact->first_name}}{{$contact->last_name}}</td>
+      <td>
+        @if($contact->gender == 1)
+          男性
+        @elseif($contact->gender == 2)
+          女性
+        @else
+          その他
+        @endif
+      </td>
+      <td>{{$contact->email}}</td>
+      <td>{{$contact->category_id}}</td>
+    </tr>
+    @endforeach
   </table>
 
 
