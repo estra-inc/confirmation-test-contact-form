@@ -15,3 +15,4 @@ Route::get('/admin', function () {
   return view('admin', compact('contacts', 'categories'));
 });
 Route::post('/search', [SearchController::class, 'search']);
+Route::post('/delete', [ContactController::class, 'destroy']);

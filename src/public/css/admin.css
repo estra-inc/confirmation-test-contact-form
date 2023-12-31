@@ -1,0 +1,40 @@
+.modal__wrapper {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 10px;
+  width: 40%;
+  background-color: #D9C6B5;
+}
+
+.modal__wrapper:not(:target) {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+}
+
+.modal__wrapper:target {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .4s, visibility .4s;
+}
+
+.modal-overlay {
+  /* z-index: 10; */
+  z-index: 10;
+  position: absolute;
+  top: -50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  background: rgba(0, 0, 0, .5)
+}
+
+.modal-form__group {
+  display: flex;
+  align-items: center;
+}
