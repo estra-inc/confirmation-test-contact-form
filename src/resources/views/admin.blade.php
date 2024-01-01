@@ -37,6 +37,14 @@
       <input type="submit" value="リセット" name="reset">
     </form>
   </div>
+
+  <form action="/export" method="get">
+    @foreach($csvData as $csv)
+    <input type="hidden" name="contact_id[]" value="{{$csv->id}}">
+    @endforeach
+    <input type="submit" value="エクスポート">
+  </form>
+
   {{ $contacts->links() }}
   <table>
     <tr>
@@ -64,7 +72,7 @@
         <a href="#{{$contact->id}}">詳細</a>
       </td>
     </tr>
-    
+
     <div class="modal" id="{{$contact->id}}">
       <a href="#!" class="modal-overlay"></a>
       <div class="modal__inner">

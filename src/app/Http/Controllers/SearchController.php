@@ -35,8 +35,9 @@ class SearchController extends Controller
 
         // $query->dd();
         $contacts = $query->simplePaginate(5);
+        $csvData = $query->get();
         // dd($contacts);
         $categories = Category::all();
-        return view('admin' , compact('contacts', 'categories'));
+        return view('admin' , compact('contacts', 'categories', 'csvData'));
     }
 }
