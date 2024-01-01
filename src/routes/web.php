@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\SearchController;
 use App\Models\Category;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +14,6 @@ Route::get('/admin', function () {
   $categories = Category::all();
   return view('admin', compact('contacts', 'categories', 'csvData'));
 });
-Route::post('/search', [SearchController::class, 'search']);
+Route::post('/search', [ContactController::class, 'search']);
 Route::post('/delete', [ContactController::class, 'destroy']);
 Route::get('/export', [ContactController::class, 'export']);
