@@ -68,4 +68,5 @@ input::placeholder {
   background-color: #82756A;
   color: #FFF;
   font-size: 16px;
+  cursor: pointer;
 }
