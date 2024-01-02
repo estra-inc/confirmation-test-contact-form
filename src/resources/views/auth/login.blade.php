@@ -17,22 +17,22 @@
       <div class="login-form__group">
         <label class="login-form__label" for="email">メールアドレス</label>
         <input class="login-form__input" type="mail" name="email" id="email">
-        <p class="login-form__error-message">
+        <p class="register-form__error-message">
           @error('email')
           {{ $message }}
           @enderror
         </p>
       </div>
-      <div>
+      <div class="login-form__group">
         <label class="login-form__label" for="password">パスワード</label>
-        <input class="login-form__input" type="password" name="password" id="password">
-        <p class="register-form__error-message">
+        <input  type="password" name="password" id="password">
+        <p>
           @error('password')
           {{ $message }}
           @enderror
         </p>
       </div>
-      <input class="login-form__btn btn" type="submit" value="登録">
+      <input type="submit" value="ログイン">
     </form>
   </div>
 </div>
