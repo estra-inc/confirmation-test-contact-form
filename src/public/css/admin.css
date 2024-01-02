@@ -4,9 +4,6 @@
   position: fixed;
   top: 0;
   left: 0;
-}
-
-.modal:not(:target) {
   opacity: 0;
   visibility: hidden;
 }
