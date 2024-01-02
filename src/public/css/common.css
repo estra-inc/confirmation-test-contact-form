@@ -57,8 +57,7 @@ body {
 /* ボタン */
 .btn {
   display: block;
-  padding: .4vw;
-  width: 6vw;
+  padding: 8px 32px;
   border: none;
   background-color: #82756A;
   color: #FFF;
