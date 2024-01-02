@@ -48,6 +48,14 @@ class ContactController extends Controller
         return view('thanks');
     }
 
+    public function admin()
+    {
+        $contacts = Contact::with('category')->simplePaginate(5);
+        $categories = Category::all();
+        $csvData = Contact::all();
+        return view('admin', compact('contacts', 'categories', 'csvData'));
+    }
+
     public function search(Request $request)
     {
         if ($request->has('reset')) {
