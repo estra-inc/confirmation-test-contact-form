@@ -16,28 +16,30 @@
 <div>
   <h2>Admin</h2>
   <div>
-    <form action="/search" method="post">
+    <form action="/search" method="get">
       @csrf
       <div>
-        <input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください">
+        <input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{request('keyword')}}">
         <div>
-          <select name="gender">
+          <select name="gender" value="{{request('gender')}}">
             <option disabled selected>性別</option>
-            <option value="1">男性</option>
-            <option value="2">女性</option>
-            <option value="3">その他</option>
+            <option value="1" @if( request('gender')==1 ) selected @endif>男性</option>
+            <option value="2" @if( request('gender')==2 ) selected @endif>女性</option>
+            <option value="3" @if( request('gender')==3 ) selected @endif>その他</option>
           </select>
         </div>
         <div>
           <select name="category_id">
             <option disabled selected>お問い合わせの種類</option>
             @foreach($categories as $category)
-            <option value="{{ $category->id }}">{{ $category->content }}</option>
+            <option value="{{ $category->id }}" @if( request('category_id')==$category->id ) selected @endif
+              >{{$category->content }}
+            </option>
             @endforeach
           </select>
         </div>
         <div>
-          <input type="date" name="date">
+          <input type="date" name="date" value="{{request('date')}}">
         </div>
       </div>
       <input type="submit" value="検索">
@@ -45,14 +47,16 @@
     </form>
   </div>
 
-  <form action="/export" method="get">
+  <form action="/export" method="post">
+    @csrf
     @foreach($csvData as $csv)
     <input type="hidden" name="contact_ids[]" value="{{$csv->id}}">
     @endforeach
     <input type="submit" value="エクスポート">
   </form>
 
-  {{ $contacts->links() }}
+  {{ $contacts->appends(request()->query())->links() }}
+
   <table>
     <tr>
       <th>お名前</th>

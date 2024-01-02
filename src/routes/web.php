@@ -11,7 +11,7 @@ Route::post('/thanks', [ContactController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [ContactController::class, 'admin']);
-    Route::post('/search', [ContactController::class, 'search']);
+    Route::get('/search', [ContactController::class, 'search']);
     Route::post('/delete', [ContactController::class, 'destroy']);
-    Route::get('/export', [ContactController::class, 'export']);
+    Route::post('/export', [ContactController::class, 'export']);
 });
