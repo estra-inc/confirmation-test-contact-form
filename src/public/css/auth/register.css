@@ -23,9 +23,9 @@
   background-color: #FDFEFE;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   .register-form__form {
-    width: 80vw;
+    width: 60vw;
   }
 }
 
