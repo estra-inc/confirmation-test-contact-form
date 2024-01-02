@@ -7,6 +7,12 @@ body, textarea, input {
   color: #8B7969;
 }
 
+
+textarea::placeholder,
+input::placeholder {
+  color: #BEB1A6;
+}
+
 .app {
   display: flex;
   flex-direction: column;
