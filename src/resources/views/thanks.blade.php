@@ -13,6 +13,6 @@
   </div>
 </div>
 <div class="thanks-page-bg__inner">
-  <span class="thanks-page-bg__text">Thank</span><span class="thanks-page-bg__text">you</span>
+  <span class="thanks-page-bg__text">Thank you</span>
 </div>
 @endsection

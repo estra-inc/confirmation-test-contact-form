@@ -1,17 +1,17 @@
-header {
+.header {
   display: none;
 }
 
 .thanks-page {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 
 .thanks-page__message {
-  font-size: 25px;
   font-weight: bold;
+  font-size: 24px;
 }
 
 .thanks-page__btn {
@@ -22,12 +22,12 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: serif;
+  width: 100%;
+  text-align: center;
   font-size: 260px;
+  font-family: serif;
   opacity: 0.05;
+  transform: translate(-50%, -50%);
+
 }
 
-.thanks-page-bg__text {
-  margin: 0 32px;
-}
