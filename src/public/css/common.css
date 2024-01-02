@@ -3,8 +3,14 @@ body {
   height: 100%;
 }
 
-body {
+body, textarea, input {
   color: #8B7969;
+}
+
+
+textarea::placeholder,
+input::placeholder {
+  color: #BEB1A6;
 }
 
 .app {
@@ -62,4 +68,5 @@ body {
   background-color: #82756A;
   color: #FFF;
   font-size: 16px;
+  cursor: pointer;
 }
