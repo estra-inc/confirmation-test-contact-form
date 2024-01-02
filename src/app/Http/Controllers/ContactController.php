@@ -64,9 +64,11 @@ class ContactController extends Controller
         $query = Contact::query();
 
         if(!empty($request->keyword)) {
-            $query->where('first_name', 'like', '%' . $request->keyword . '%')
-                ->orWhere('last_name', 'like', '%' . $request->keyword . '%')
-                ->orWhere('email', 'like', '%' . $request->keyword . '%');
+            $query->where(function ($q) use ($request) {
+                $q->where('first_name', 'like', '%' . $request->keyword . '%')
+                    ->orWhere('last_name', 'like', '%' . $request->keyword . '%')
+                    ->orWhere('email', 'like', '%' . $request->keyword . '%');
+            });
         }
 
         if (!empty($request->gender)) {
