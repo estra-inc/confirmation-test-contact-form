@@ -1,22 +1,19 @@
-.confirm-form {
-  padding: 50px;
-}
-
 .confirm-form__heading {
-  font-family: serif;
+  text-align: center;
   font-weight: 100;
   font-size: 30px;
-  text-align: center;
+  font-family: serif;
 }
 
 .confirm-form__inner {
-  width: 74%;
   margin: 32px auto 0;
+  width: 74%;
   font-size: 18px;
 }
 
 .confirm-form__table {
   width: 100%;
+  border-collapse: collapse;
 }
 
 .confirm-form__row {
@@ -29,32 +26,30 @@
 }
 
 .confirm-form__label {
-  width: 34%;
+  width: calc(100% / 3);
+  background-color: #BAA899;
+  color: #FFF;
   text-align: left;
   font-weight: 400;
-  color: #FFF;
-  background-color: #BAA899;
 }
 
 .confirm-form__btn-inner {
-  display: grid;
-  grid-template-columns: 1fr 150px 1fr;
+  display: flex;
+  justify-content: center;
   margin-top: 32px;
+
+  gap: 32px;
 }
 
 .confirm-form__send-btn {
   width: auto;
-  grid-column: 2;
   text-align: center;
 }
 
 .confirm-form__back-btn {
-  margin-left: 32px;
-  text-align: start;
   font-size: 16px;
-  border-bottom: 1px solid #BAA899;
 }
 
 .confirm-form__back-btn {
-  grid-column: 3;
+  text-decoration:underline
 }
