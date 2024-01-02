@@ -1,27 +1,32 @@
-.login-form {
-  height: 91.8vh;
+.content {
   background-color: #F1ECE7;
 }
 
 .login-form__heading {
-  font-family: serif;
-  padding: 50px;
+  text-align: center;
   font-weight: 100;
   font-size: 30px;
-  text-align: center;
+  font-family: serif;
 }
 
 .login-form__inner {
   display: flex;
   justify-content: center;
+  margin-top: 48px;
 }
 
 .login-form__form {
-  width: 40vw;
   padding: 70px 100px;
-  border-radius: 10px;
+  width: 40vw;
   border: 1px solid #C5B9B0;
+  border-radius: 10px;
   background-color: #FDFEFE;
+}
+
+@media screen and (max-width: 1200px) {
+  .login-form__form {
+    width: 60vw;
+  }
 }
 
 .login-form__group {
@@ -39,10 +44,10 @@
   padding: 1vw 1.3vw;
   width: 100%;
   height: 45px;
-  font-family: serif;
   border: none;
-  color: #BEB1A6;
   background-color: #F4F4F4;
+  color: #BEB1A6;
+  font-family: serif;
 }
 
 .login-form__error-message {

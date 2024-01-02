@@ -25,14 +25,14 @@
       </div>
       <div class="login-form__group">
         <label class="login-form__label" for="password">パスワード</label>
-        <input type="password" name="password" id="password">
+        <input class="login-form__input" type="password" name="password" id="password">
         <p>
           @error('password')
           {{ $message }}
           @enderror
         </p>
       </div>
-      <input type="submit" value="ログイン">
+      <input class="login-form__btn btn" type="submit" value="ログイン">
     </form>
   </div>
 </div>
