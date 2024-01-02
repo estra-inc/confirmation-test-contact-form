@@ -48,7 +48,7 @@
 
   <form action="/export" method="get">
     @foreach($csvData as $csv)
-    <input type="hidden" name="contact_id[]" value="{{$csv->id}}">
+    <input type="hidden" name="contact_ids[]" value="{{$csv->id}}">
     @endforeach
     <input type="submit" value="エクスポート">
   </form>
@@ -67,11 +67,11 @@
       <td>{{$contact->first_name}}{{$contact->last_name}}</td>
       <td>
         @if($contact->gender == 1)
-          男性
+        男性
         @elseif($contact->gender == 2)
-          女性
+        女性
         @else
-          その他
+        その他
         @endif
       </td>
       <td>{{$contact->email}}</td>
@@ -87,50 +87,50 @@
         <div class="modal__content">
           <form action="/delete" method="post">
             @csrf
-          <div class="modal-form__group">
-            <label for="">お名前</label>
-            <p>{{$contact->first_name}}{{$contact->last_name}}</p>
-          </div>
+            <div class="modal-form__group">
+              <label for="">お名前</label>
+              <p>{{$contact->first_name}}{{$contact->last_name}}</p>
+            </div>
 
-          <div class="modal-form__group">
-            <label for="">性別</label>
-            <p>
-              @if($contact->gender == 1)
+            <div class="modal-form__group">
+              <label for="">性別</label>
+              <p>
+                @if($contact->gender == 1)
                 男性
-              @elseif($contact->gender == 2)
+                @elseif($contact->gender == 2)
                 女性
-              @else
+                @else
                 その他
-              @endif
-            </p>
-          </div>
+                @endif
+              </p>
+            </div>
 
-          <div class="modal-form__group">
-            <label for="">メールアドレス</label>
-            <p>{{$contact->email}}</p>
-          </div>
+            <div class="modal-form__group">
+              <label for="">メールアドレス</label>
+              <p>{{$contact->email}}</p>
+            </div>
 
-          <div class="modal-form__group">
-            <label for="">電話番号</label>
-            <p>{{$contact->tell}}</p>
-          </div>
+            <div class="modal-form__group">
+              <label for="">電話番号</label>
+              <p>{{$contact->tell}}</p>
+            </div>
 
-          <div class="modal-form__group">
-            <label for="">住所</label>
-            <p>{{$contact->address}}</p>
-          </div>
+            <div class="modal-form__group">
+              <label for="">住所</label>
+              <p>{{$contact->address}}</p>
+            </div>
 
-          <div class="modal-form__group">
-            <label for="">お問い合わせの種類</label>
-            <p>{{$contact->category->content}}</p>
-          </div>
+            <div class="modal-form__group">
+              <label for="">お問い合わせの種類</label>
+              <p>{{$contact->category->content}}</p>
+            </div>
 
-          <div class="modal-form__group">
-            <label for="">お問い合わせ内容</label>
-            <p>{{$contact->detail}}</p>
-          </div>
-          <input type="hidden" name="id" value="{{ $contact->id }}">
-          <input type="submit" value="削除">
+            <div class="modal-form__group">
+              <label for="">お問い合わせ内容</label>
+              <p>{{$contact->detail}}</p>
+            </div>
+            <input type="hidden" name="id" value="{{ $contact->id }}">
+            <input type="submit" value="削除">
 
           </form>
         </div>

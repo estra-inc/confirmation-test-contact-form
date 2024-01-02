@@ -11,24 +11,28 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ContactController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $categories = Category::all();
         return view('contact', compact('categories'));
     }
 
-    public function confirm(ContactRequest $request) {
+    public function confirm(ContactRequest $request)
+    {
         $contacts = $request->all();
         $category = Category::find($request->category_id);
         return view('confirm', compact('contacts', 'category'));
     }
 
-    public function store(ContactRequest $request) {
+    public function store(ContactRequest $request)
+    {
         if ($request->has('back')) {
             return redirect('/')->withInput();
         }
 
         $request['tell'] = $request->tel_1 . $request->tel_2 . $request->tel_3;
-        Contact::create($request->only([
+        Contact::create(
+            $request->only([
                 'category_id',
                 'first_name',
                 'last_name',
@@ -72,7 +76,7 @@ class ContactController extends Controller
         $contacts = $query->simplePaginate(5);
         $csvData = $query->get();
         $categories = Category::all();
-        return view('admin' , compact('contacts', 'categories', 'csvData'));
+        return view('admin', compact('contacts', 'categories', 'csvData'));
     }
 
     public function destroy(Request $request)
@@ -85,15 +89,13 @@ class ContactController extends Controller
     {
         $csvData = [];
 
-        foreach($request->contact_id as $id) {
-            $csvData[] = Contact::find($id)->toArray();
-        }
+        $csvData = Contact::whereIn('id', $request->contact_ids)->get()->toArray();
 
         $csvHeader = [
             'id', 'category_id', 'first_name', 'last_name', 'gender', 'email', 'tell', 'address', 'building', 'detail', 'created_at', 'updated_at'
         ];
 
-        $response = new StreamedResponse ( function() use ($csvHeader, $csvData) {
+        $response = new StreamedResponse(function () use ($csvHeader, $csvData) {
             $createCsvFile = fopen('php://output', 'w');
 
             mb_convert_variables('SJIS-win', 'UTF-8', $csvHeader);
@@ -101,12 +103,8 @@ class ContactController extends Controller
             fputcsv($createCsvFile, $csvHeader);
 
             foreach ($csvData as $csv) {
-                $csv['created_at'] = Date::make($csv['created_at'])
-                    ->setTimezone('Asia/Tokyo')
-                    ->format('Y/m/d H:i:s');
-                $csv['updated_at'] = Date::make($csv['updated_at'])
-                    ->setTimezone('Asia/Tokyo')
-                    ->format('Y/m/d H:i:s');
+                $csv['created_at'] = Date::make($csv['created_at'])->setTimezone('Asia/Tokyo')->format('Y/m/d H:i:s');
+                $csv['updated_at'] = Date::make($csv['updated_at'])->setTimezone('Asia/Tokyo')->format('Y/m/d H:i:s');
                 fputcsv($createCsvFile, $csv);
             }
 
