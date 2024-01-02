@@ -1,7 +1,7 @@
 .contact-form__heading {
   text-align: center;
   font-weight: 100;
-  font-size: 30px;
+  font-size: 32px;
   font-family: serif;
 }
 
@@ -20,7 +20,7 @@
   align-items: center;
   margin-top: 32px;
 
-  grid-template-columns: 1.2fr 2fr;
+  grid-template-columns: 1fr 2fr;
 }
 
 .contact-form__group:first-of-type{
@@ -42,10 +42,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  gap: 32px;
+}
+
+.contact-form__name-input-group{
+  width: 100%;
 }
 
 .contact-form__name-input {
-  width: 45%;
+  width: 100%;
 }
 
 .contact-form__tel--input {
@@ -130,4 +136,17 @@
   color: #FF9494;
 
   grid-column: 2;
+}
+
+.contact-form__name-group .contact-form__error-message{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 32px;
+}
+
+.contact-form__error-message-first-name,
+.contact-form__error-message-last-name {
+  width: 100%;
 }
