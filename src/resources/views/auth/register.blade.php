@@ -21,7 +21,7 @@
           @error('name')
           {{ $message }}
           @enderror
-      </p>
+        </p>
       </div>
       <div class="register-form__group">
         <label class="register-form__label" for="email">メールアドレス</label>
