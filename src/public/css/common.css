@@ -1,0 +1,66 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: #8B7969;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ヘッダー */
+.header {
+  display: grid;
+  align-items: center;
+  padding: 16px 0;
+  height: 82px;
+  border: 1px solid #E0DFDE;
+  font-family: serif;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.header__heading {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 32px;
+
+  grid-column: 2;
+}
+
+.header__link {
+  margin: 0 auto;
+  width: 80px;
+  border: 1px solid #D9C6B5;
+  background-color: #F0F0F0;
+  color: #D9C6B5;
+  text-align: center;
+  text-decoration: none;
+
+  grid-column: 3;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  padding: 48px;
+}
+
+/* ボタン */
+.btn {
+  display: block;
+  padding: .4vw;
+  width: 6vw;
+  border: none;
+  background-color: #82756A;
+  color: #FFF;
+  font-size: 16px;
+}
