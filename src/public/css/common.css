@@ -23,7 +23,7 @@ input::placeholder {
   display: grid;
   align-items: center;
   padding: 16px 0;
-  height: 82px;
+  height: 80px;
   border: 1px solid #E0DFDE;
   text-align: center;
   font-family: serif;
@@ -50,6 +50,7 @@ input::placeholder {
   grid-column: 3;
 }
 
+/* コンテンツ */
 .content {
   display: flex;
   flex-direction: column;
@@ -84,8 +85,8 @@ input::placeholder {
 }
 
 .pagination li:not(.active) {
-  border: 1px solid #E0DFDE;
   padding: 4px 12px;
+  border: 1px solid #E0DFDE;
 }
 
 .pagination a {
@@ -100,6 +101,6 @@ input::placeholder {
 .active {
   padding: 4px 12px;
   border: 1px solid #8B7969;
-  color: #FFF;
   background-color: #8B7969;
+  color: #FFF;
 }
