@@ -38,9 +38,7 @@
           @endforeach
         </select>
       </div>
-      <div class="search-form__date">
-        <input class="search-form__date-input" type="date" name="date" value="{{request('date')}}">
-      </div>
+      <input class="search-form__date-input" type="date" name="date" value="{{request('date')}}">
       <input class="search-form__search-btn btn" type="submit" value="検索">
       <input class="search-form__reset-btn btn" type="submit" value="リセット" name="reset">
     </form>
