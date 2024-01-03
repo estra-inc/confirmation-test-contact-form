@@ -50,7 +50,7 @@ class ContactController extends Controller
 
     public function admin()
     {
-        $contacts = Contact::with('category')->paginate(6);
+        $contacts = Contact::with('category')->paginate(7);
         $categories = Category::all();
         $csvData = Contact::all();
         return view('admin', compact('contacts', 'categories', 'csvData'));

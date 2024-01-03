@@ -4,6 +4,10 @@ select {
   color: #8B7969;
 }
 
+.content {
+  padding-top: 28px;
+}
+
 .admin__heading {
   text-align: center;
   font-weight: 100;
@@ -21,12 +25,12 @@ select {
   align-items: stretch;
   flex-wrap: wrap;
 
-  gap: 20px;
+  gap: 24px;
 }
 
 .search-form__keyword-input {
   padding: 8px 20px;
-  width: 600px;
+  width: 348px;
   border: 1px solid #E3DED9;
   background-color: #FBFBFB;
 }
@@ -77,7 +81,7 @@ select {
 .search-form__category::after {
   position: absolute;
   top: 50%;
-  right: 8%;
+  right: 16px;
   width: 0;
   height: 0;
   border-top: 12px solid #BEB1A6;
@@ -85,6 +89,7 @@ select {
   border-left: 8px solid transparent;
   content: "";
   transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .search-form__gender-select,
@@ -99,13 +104,13 @@ select {
 }
 
 .search-form__category-select {
-  width: 220px;
+  width: 216px;
 }
 
 .search-form__search-btn,
 .search-form__reset-btn {
-  padding: 12px;
-  width: 180px;
+  padding: 12px 20px;
+  width: 104px;
 }
 
 .search-form__reset-btn {
@@ -160,7 +165,7 @@ select {
 
 .export-form {
   align-items: center;
-  /* display: flex; */
+  display: flex;
   justify-content: space-between;
   margin-top: 32px;
 }
