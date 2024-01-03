@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="contact-form">
-  <h2 class="contact-form__heading">Contact</h2>
+  <h2 class="contact-form__heading content__heading">Contact</h2>
   <div class="contact-form__inner">
     <form action="confirm" method="post">
       @csrf
@@ -82,14 +82,12 @@
           電話番号<span class="contact-form__required">※</span>
         </label>
         <div class="contact-form__tel-inputs">
-          <input class="contact-form__input contact-form__tel--input" type="tel" name="tel_1" id="tel"
+          <input class="contact-form__input contact-form__tel-input" type="tel" name="tel_1" id="tel"
             value="{{ old('tel_1') }}">
           <span>-</span>
-          <input class="contact-form__input contact-form__tel--input" type="tel" name="tel_2"
-            value="{{ old('tel_2') }}">
+          <input class="contact-form__input contact-form__tel-input" type="tel" name="tel_2" value="{{ old('tel_2') }}">
           <span>-</span>
-          <input class="contact-form__input contact-form__tel--input" type="tel" name="tel_3"
-            value="{{ old('tel_3') }}">
+          <input class="contact-form__input contact-form__tel-input" type="tel" name="tel_3" value="{{ old('tel_3') }}">
         </div>
         <p class="contact-form__error-message">
           @if ($errors->has('tel_1'))

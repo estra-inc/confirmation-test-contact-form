@@ -5,12 +5,12 @@
 @endsection
 
 @section('link')
-<a class="header__link" href="/register">Register</a>
+<a class="header__link" href="/register">register</a>
 @endsection
 
 @section('content')
 <div class="login-form">
-  <h2 class="login-form__heading">Login</h2>
+  <h2 class="login-form__heading content__heading">Login</h2>
   <div class="login-form__inner">
     <form class="login-form__form" action="/login" method="post">
       @csrf
