@@ -15,7 +15,7 @@
 }
 
 .thanks-page__btn {
-  margin: 36px auto 0;
+  margin: 32px auto 0;
 }
 
 .thanks-page-bg__inner {
@@ -25,9 +25,11 @@
   z-index: -1;
   width: 100%;
   text-align: center;
-  font-size: 260px;
   font-family: serif;
   opacity: 0.05;
   transform: translate(-50%, -50%);
 }
 
+.thanks-page-bg__text{
+  font-size: 18vw;
+}
