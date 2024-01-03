@@ -27,13 +27,13 @@ input::placeholder {
   height: 82px;
   border: 1px solid #E0DFDE;
   font-family: serif;
+  text-align: center;
 
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
 }
 
 .header__heading {
-  text-align: center;
   font-weight: lighter;
   font-size: 32px;
 
@@ -46,7 +46,6 @@ input::placeholder {
   border: 1px solid #D9C6B5;
   background-color: #F0F0F0;
   color: #D9C6B5;
-  text-align: center;
   text-decoration: none;
 
   grid-column: 3;
