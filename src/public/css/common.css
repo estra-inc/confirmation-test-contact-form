@@ -7,7 +7,6 @@ body, textarea, input {
   color: #8B7969;
 }
 
-
 textarea::placeholder,
 input::placeholder {
   color: #BEB1A6;
@@ -59,6 +58,13 @@ input::placeholder {
   padding: 48px;
 }
 
+.content__heading {
+  text-align: center;
+  font-weight: 100;
+  font-size: 32px;
+  font-family: serif;
+}
+
 /* ボタン */
 .btn {
   display: block;
@@ -74,5 +80,26 @@ input::placeholder {
 .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 32px;
+  list-style: none;
+}
+
+.pagination li:not(.active) {
+  border: 1px solid #E0DFDE;
+  padding: 4px 12px;
+}
+
+.pagination a {
+  color: #8B7969;
+  text-decoration: none;
+}
+
+.pagination__link {
+  text-decoration: none;
+}
+
+.active {
+  padding: 4px 12px;
+  border: 1px solid #8B7969;
+  color: #FFF;
+  background-color: #8B7969;
 }

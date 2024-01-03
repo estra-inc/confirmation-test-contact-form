@@ -5,14 +5,7 @@ select {
 }
 
 .content {
-  padding-top: 28px;
-}
-
-.admin__heading {
-  text-align: center;
-  font-weight: 100;
-  font-size: 32px;
-  font-family: serif;
+  display: block;
 }
 
 .admin__inner {
@@ -33,10 +26,6 @@ select {
   width: 348px;
   border: 1px solid #E3DED9;
   background-color: #FBFBFB;
-}
-
-.search-form__date {
-  position: relative;
 }
 
 .search-form__date-input {
@@ -149,12 +138,6 @@ select {
   font-weight: 400;
 }
 
-.export__btn {
-  background-color: #E1DBD6;
-  color: #8B7969;
-  font-weight: 400;
-}
-
 .admin__detail-btn {
   padding: 8px 12px;
   border: 1px solid #D9C6B5;
@@ -170,6 +153,10 @@ select {
   margin-top: 32px;
 }
 
+.export__btn {
+  background-color: #E1DBD6;
+  color: #8B7969;
+}
 
 .modal {
   position: fixed;

@@ -4,11 +4,11 @@
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
         <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
-            <span aria-hidden="true">&lsaquo;a</span>
+            <span aria-hidden="true">&lsaquo;</span>
         </li>
         @else
         <li>
-            <a href="{{ $paginator->previousPageUrl() }}" rel="prev"
+            <a class="pagination__link" href="{{ $paginator->previousPageUrl() }}" rel="prev"
                 aria-label="@lang('pagination.previous')">&lsaquo;</a>
         </li>
         @endif
@@ -22,6 +22,7 @@
 
         {{-- Array Of Links --}}
         @if (is_array($element))
+
         @foreach ($element as $page => $url)
         @if ($page == $paginator->currentPage())
         <li class="active" aria-current="page"><span>{{ $page }}</span></li>

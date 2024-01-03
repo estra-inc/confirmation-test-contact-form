@@ -2,13 +2,6 @@
   background-color: #F1ECE7;
 }
 
-.register-form__heading {
-  text-align: center;
-  font-weight: 100;
-  font-size: 30px;
-  font-family: serif;
-}
-
 .register-form__inner {
   display: flex;
   justify-content: center;

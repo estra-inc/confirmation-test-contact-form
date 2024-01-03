@@ -1,6 +1,5 @@
 @extends('layouts/app')
 
-
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/admin.css')}}">
 @endsection
@@ -14,7 +13,7 @@
 
 @section('content')
 <div class="admin">
-  <h2 class="admin__heading">Admin</h2>
+  <h2 class="admin__heading content__heading">Admin</h2>
   <div class="admin__inner">
     <form class="search-form" action="/search" method="get">
       @csrf
@@ -51,8 +50,7 @@
         @endforeach
         <input class="export__btn btn" type="submit" value="エクスポート">
       </form>
-      {{ $contacts->links('vendor.pagination.custom') }}
-      <!-- {{ $contacts->appends(request()->query())->links() }} -->
+      {{ $contacts->appends(request()->query())->links('vendor.pagination.custom') }}
     </div>
 
     <table class="admin__table">

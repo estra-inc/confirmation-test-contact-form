@@ -10,7 +10,7 @@
 
 @section('content')
 <div class="register-form">
-  <h2 class="register-form__heading">Register</h2>
+  <h2 class="register-form__heading content__heading">Register</h2>
   <div class="register-form__inner">
     <form class="register-form__form" action="/register" method="post">
       @csrf
