@@ -85,8 +85,12 @@ input::placeholder {
 }
 
 .pagination li:not(.active) {
-  padding: 4px 12px;
   border: 1px solid #E0DFDE;
+  padding: 4px 12px;
+}
+
+.pagination li:not(:last-child) {
+  border-right: none;
 }
 
 .pagination a {
