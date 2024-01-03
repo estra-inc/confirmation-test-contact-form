@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-  <link rel="stylesheet" href="{{ asset('css/confirm.css')}}">
+<link rel="stylesheet" href="{{ asset('css/confirm.css')}}">
 @endsection
 
 @section('content')
@@ -22,11 +21,11 @@
           <th class="confirm-form__label">性別</th>
           <td class="confirm-form__data">
             @if($contacts['gender'] == 1)
-              男性
+            男性
             @elseif($contacts['gender'] == 2)
-              女性
+            女性
             @else
-              その他
+            その他
             @endif
           </td>
           <input type="hidden" name="gender" value="{{ $contacts['gender'] }}">
@@ -66,9 +65,7 @@
       </table>
       <div class="confirm-form__btn-inner">
         <input class="confirm-form__send-btn btn" type="submit" value="送信" name="send">
-        <div>
-          <input class="confirm-form__back-btn" type="submit" value="修正" name="back">
-        </div>
+        <input class="confirm-form__back-btn" type="submit" value="修正" name="back">
       </div>
     </form>
   </div>
