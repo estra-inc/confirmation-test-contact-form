@@ -26,8 +26,8 @@ input::placeholder {
   padding: 16px 0;
   height: 82px;
   border: 1px solid #E0DFDE;
-  font-family: serif;
   text-align: center;
+  font-family: serif;
 
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
@@ -68,4 +68,11 @@ input::placeholder {
   color: #FFF;
   font-size: 16px;
   cursor: pointer;
+}
+
+/* ページネーション */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
 }
