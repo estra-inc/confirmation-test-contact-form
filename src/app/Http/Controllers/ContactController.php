@@ -50,7 +50,7 @@ class ContactController extends Controller
 
     public function admin()
     {
-        $contacts = Contact::with('category')->simplePaginate(6);
+        $contacts = Contact::with('category')->paginate(6);
         $categories = Category::all();
         $csvData = Contact::all();
         return view('admin', compact('contacts', 'categories', 'csvData'));
@@ -83,7 +83,7 @@ class ContactController extends Controller
             $query->whereDate('created_at', '=', $request->date);
         }
 
-        $contacts = $query->simplePaginate(6);
+        $contacts = $query->paginate(6);
         $csvData = $query->get();
         $categories = Category::all();
         return view('admin', compact('contacts', 'categories', 'csvData'));

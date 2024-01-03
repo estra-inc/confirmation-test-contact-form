@@ -148,7 +148,7 @@ select {
 
 .export-form {
   align-items: center;
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   margin-top: 32px;
 }
