@@ -46,15 +46,11 @@
     </form>
 
     <div class="export-form">
-      <form action="/export" method="post">
+      <form action="{{'/export?'.http_build_query(request()->query())}}" method="post">
         @csrf
-        @foreach($csvData as $csv)
-        <input type="hidden" name="contact_ids[]" value="{{$csv->id}}">
-        @endforeach
         <input class="export__btn btn" type="submit" value="エクスポート">
       </form>
       {{ $contacts->links('vendor.pagination.custom') }}
-      <!-- {{ $contacts->appends(request()->query())->links() }} -->
     </div>
 
     <table class="admin__table">

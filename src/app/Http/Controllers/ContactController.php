@@ -97,6 +97,9 @@ class ContactController extends Controller
 
     public function export(Request $request)
     {
+        dd($request->all());
+        // TODO 検索条件に合致したデータを取得する
+        // TODO 検索条件に合致したデータをcsvDataに代入する
         $csvData = [];
 
         $csvData = Contact::whereIn('id', $request->contact_ids)->get()->toArray();
