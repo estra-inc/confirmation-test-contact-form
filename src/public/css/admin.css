@@ -4,15 +4,12 @@ select {
   color: #8B7969;
 }
 
-.content {
-  display: block;
-}
-
 .admin__inner {
   margin: 32px auto 0;
   width: 84%;
 }
 
+/* フォーム */
 .search-form {
   display: flex;
   align-items: stretch;
@@ -22,33 +19,20 @@ select {
 }
 
 .search-form__keyword-input {
-  padding: 8px 20px;
-  width: 348px;
+  padding: 8px 12px;
+  /* placeholderが表示される最低限の幅を最小値とする */
+  min-width: 324px;
   border: 1px solid #E3DED9;
   background-color: #FBFBFB;
 }
 
-.search-form__date-input {
+.search-form__gender,
+.search-form__category {
   position: relative;
-  padding: 8px 12px;
-  width: 140px;
-  border: 1px solid #E3DED9;
-  background-color: #F4F4F4;
 }
 
-.search-form__date-input::-webkit-calendar-picker-indicator {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  width: auto;
-  height: auto;
-  background: transparent;
-}
-
-.search-form__date-input::after {
+.search-form__gender::after,
+.search-form__category::after {
   position: absolute;
   top: 50%;
   right: 8%;
@@ -61,16 +45,45 @@ select {
   transform: translateY(-50%);
 }
 
-.search-form__gender,
-.search-form__category {
-  position: relative;
+.search-form__gender-select,
+.search-form__category-select {
+  padding: 8px 12px;
+  height: 100%;
+  background-color: #F4F4F4;
 }
 
-.search-form__gender::after,
-.search-form__category::after {
+.search-form__gender-select {
+  min-width: 96px;
+}
+
+.search-form__category-select {
+  min-width: 220px;
+}
+
+.search-form__date {
+  position: relative;
+  padding: 8px 12px;
+  min-width: 140px;
+  border: 1px solid #E3DED9;
+  background-color: #F4F4F4;
+}
+
+.search-form__date::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  background: transparent;
+}
+
+.search-form__date::after {
   position: absolute;
   top: 50%;
-  right: 16px;
+  right: 12px;
   width: 0;
   height: 0;
   border-top: 12px solid #BEB1A6;
@@ -78,34 +91,39 @@ select {
   border-left: 8px solid transparent;
   content: "";
   transform: translateY(-50%);
-  pointer-events: none;
 }
 
-.search-form__gender-select,
-.search-form__category-select {
-  padding: 8px 20px;
-  height: 100%;
-  background-color: #F4F4F4;
-}
+.search-form__actions {
+  display: flex;
 
-.search-form__gender-select {
-  width: 96px;
-}
-
-.search-form__category-select {
-  width: 216px;
+  gap: 24px;
 }
 
 .search-form__search-btn,
 .search-form__reset-btn {
-  padding: 12px 20px;
-  width: 104px;
+  padding: 12px;
+  width: 90px;
 }
 
 .search-form__reset-btn {
   background-color: #D9C6B5;
 }
 
+/* エクスポートボタン */
+.export-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.export__btn {
+  background-color: #E1DBD6;
+  color: #8B7969;
+  font-weight: 400;
+}
+
+/* テーブル */
 .admin__table {
   margin-top: 16px;
   width: 100%;
@@ -123,12 +141,12 @@ select {
 
 .admin__label:first-of-type,
 .admin__data:first-of-type {
-  padding-left: 44px;
+  padding-left: 48px;
 }
 
 .admin__label:last-of-type,
 .admin__data:last-of-type {
-  padding-right: 44px;
+  padding-right: 48px;
 }
 
 .admin__label {
@@ -146,18 +164,7 @@ select {
   text-decoration: none;
 }
 
-.export-form {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 32px;
-}
-
-.export__btn {
-  background-color: #E1DBD6;
-  color: #8B7969;
-}
-
+/* モーダル */
 .modal {
   position: fixed;
   top: 0;
@@ -195,20 +202,7 @@ select {
 
 .modal__content {
   position: relative;
-  padding: 84px 88px;
-}
-
-.modal__close {
-  position: absolute;
-  top: 28px;
-  right: 32px;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #8B7969;
-  border-radius: 50%;
-  color: #8B7969;
-  text-align: center;
-  text-decoration: none;
+  padding: 64px 64px;
 }
 
 .modal-form__group {
@@ -224,7 +218,20 @@ select {
 }
 
 .modal-form__delete-btn {
-  margin: 68px auto 0;
+  margin: 64px auto 0;
   background-color: #BA370D;
   color: #FFF;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #8B7969;
+  border-radius: 50%;
+  color: #8B7969;
+  text-align: center;
+  text-decoration: none;
 }

@@ -1,5 +1,6 @@
 @extends('layouts/app')
 
+
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/admin.css')}}">
 @endsection
@@ -37,9 +38,11 @@
           @endforeach
         </select>
       </div>
-      <input class="search-form__date-input" type="date" name="date" value="{{request('date')}}">
-      <input class="search-form__search-btn btn" type="submit" value="検索">
-      <input class="search-form__reset-btn btn" type="submit" value="リセット" name="reset">
+      <input class="search-form__date" type="date" name="date" value="{{request('date')}}">
+      <div class="search-form__actions">
+        <input class="search-form__search-btn btn" type="submit" value="検索">
+        <input class="search-form__reset-btn btn" type="submit" value="リセット" name="reset">
+      </div>
     </form>
 
     <div class="export-form">
@@ -50,7 +53,8 @@
         @endforeach
         <input class="export__btn btn" type="submit" value="エクスポート">
       </form>
-      {{ $contacts->appends(request()->query())->links('vendor.pagination.custom') }}
+      {{ $contacts->links('vendor.pagination.custom') }}
+      <!-- {{ $contacts->appends(request()->query())->links() }} -->
     </div>
 
     <table class="admin__table">
@@ -134,7 +138,7 @@
             </form>
           </div>
 
-          <a href="#" class="modal__close">×</a>
+          <a href="#" class="modal__close-btn">×</a>
         </div>
       </div>
       @endforeach
