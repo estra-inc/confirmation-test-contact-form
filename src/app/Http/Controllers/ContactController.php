@@ -97,12 +97,29 @@ class ContactController extends Controller
 
     public function export(Request $request)
     {
-        dd($request->all());
-        // TODO 検索条件に合致したデータを取得する
-        // TODO 検索条件に合致したデータをcsvDataに代入する
-        $csvData = [];
+        $query = Contact::query();
 
-        $csvData = Contact::whereIn('id', $request->contact_ids)->get()->toArray();
+        if(!empty($request->keyword)) {
+            $query->where(function ($q) use ($request) {
+                $q->where('first_name', 'like', '%' . $request->keyword . '%')
+                    ->orWhere('last_name', 'like', '%' . $request->keyword . '%')
+                    ->orWhere('email', 'like', '%' . $request->keyword . '%');
+            });
+        }
+
+        if (!empty($request->gender)) {
+            $query->where('gender', '=', $request->gender);
+        }
+
+        if (!empty($request->category_id)) {
+            $query->where('category_id', '=', $request->category_id);
+        }
+
+        if (!empty($request->date)) {
+            $query->whereDate('created_at', '=', $request->date);
+        }
+
+        $csvData = $query->get()->toArray();
 
         $csvHeader = [
             'id', 'category_id', 'first_name', 'last_name', 'gender', 'email', 'tell', 'address', 'building', 'detail', 'created_at', 'updated_at'
