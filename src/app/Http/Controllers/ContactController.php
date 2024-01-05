@@ -63,25 +63,7 @@ class ContactController extends Controller
         }
         $query = Contact::query();
 
-        if(!empty($request->keyword)) {
-            $query->where(function ($q) use ($request) {
-                $q->where('first_name', 'like', '%' . $request->keyword . '%')
-                    ->orWhere('last_name', 'like', '%' . $request->keyword . '%')
-                    ->orWhere('email', 'like', '%' . $request->keyword . '%');
-            });
-        }
-
-        if (!empty($request->gender)) {
-            $query->where('gender', '=', $request->gender);
-        }
-
-        if (!empty($request->category_id)) {
-            $query->where('category_id', '=', $request->category_id);
-        }
-
-        if (!empty($request->date)) {
-            $query->whereDate('created_at', '=', $request->date);
-        }
+        $query = $this->getSearchQuery($request, $query);
 
         $contacts = $query->paginate(7);
         $csvData = $query->get();
@@ -99,25 +81,7 @@ class ContactController extends Controller
     {
         $query = Contact::query();
 
-        if(!empty($request->keyword)) {
-            $query->where(function ($q) use ($request) {
-                $q->where('first_name', 'like', '%' . $request->keyword . '%')
-                    ->orWhere('last_name', 'like', '%' . $request->keyword . '%')
-                    ->orWhere('email', 'like', '%' . $request->keyword . '%');
-            });
-        }
-
-        if (!empty($request->gender)) {
-            $query->where('gender', '=', $request->gender);
-        }
-
-        if (!empty($request->category_id)) {
-            $query->where('category_id', '=', $request->category_id);
-        }
-
-        if (!empty($request->date)) {
-            $query->whereDate('created_at', '=', $request->date);
-        }
+        $query = $this->getSearchQuery($request, $query);
 
         $csvData = $query->get()->toArray();
 
@@ -145,5 +109,30 @@ class ContactController extends Controller
         ]);
 
         return $response;
+    }
+
+    private function getSearchQuery($request, $query)
+    {
+        if(!empty($request->keyword)) {
+            $query->where(function ($q) use ($request) {
+                $q->where('first_name', 'like', '%' . $request->keyword . '%')
+                    ->orWhere('last_name', 'like', '%' . $request->keyword . '%')
+                    ->orWhere('email', 'like', '%' . $request->keyword . '%');
+            });
+        }
+
+        if (!empty($request->gender)) {
+            $query->where('gender', '=', $request->gender);
+        }
+
+        if (!empty($request->category_id)) {
+            $query->where('category_id', '=', $request->category_id);
+        }
+
+        if (!empty($request->date)) {
+            $query->whereDate('created_at', '=', $request->date);
+        }
+
+        return $query;
     }
 }
