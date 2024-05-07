@@ -18,8 +18,7 @@
   <div class="admin__inner">
     <form class="search-form" action="/search" method="get">
       @csrf
-      <input class="search-form__keyword-input" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください"
-        value="{{request('keyword')}}">
+      <input class="search-form__keyword-input" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{request('keyword')}}">
       <div class="search-form__gender">
         <select class="search-form__gender-select" name="gender" value="{{request('gender')}}">
           <option disabled selected>性別</option>
@@ -50,7 +49,7 @@
         @csrf
         <input class="export__btn btn" type="submit" value="エクスポート">
       </form>
-      {{ $contacts->links('vendor.pagination.custom') }}
+      {{ $contacts->appends(request()->query())->links('vendor.pagination.custom') }}
     </div>
 
     <table class="admin__table">
