@@ -40,7 +40,7 @@ php artisan migrate
 
 7. シーディングの実行
 ``` bash
-php artisan migrate
+php artisan db:seed
 ```
 
 ## 使用技術(実行環境)
